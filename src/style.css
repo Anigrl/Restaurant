@@ -1,21 +1,42 @@
-body{
-    background-color: rgb(255, 255, 255);
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:100,300,400');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+* {
     margin: 0;
     padding: 0;
 }
 
-header nav{
+body {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    /* left: 0; */
+}
+
+header nav {
     width: 100%;
-    height: 100px;
-    background-color:  rgb(46, 156, 24);
+    height: 80px;
+    /* background-color: rgb(221, 198, 65); */
+    background-color: rgb(211, 53, 53);
+
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0px 5px 10px 2px rgb(46, 156, 24);
-     
+    box-shadow: 0px 5px 10px 2px rgb(20, 20, 20, 0.2);
+
+
 }
 
-header nav button{
+header nav button {
     padding: 0.5rem 0;
     border-radius: 4px;
     border: none;
@@ -23,36 +44,173 @@ header nav button{
     font-size: 1.3rem;
     cursor: pointer;
     transition: 0.3s all ease;
-    color: white;
-    text-transform: lowercase;
+    color: rgb(252, 249, 249);
+    /* text-transform: lowercase; */
     position: relative;
 }
 
-header nav button::after{
+header nav button::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: rgb(191, 209, 27);
+    background-color: rgb(255, 254, 255);
     transition: 0.3s all ease;
 
 }
-header nav button:hover::after{
+
+header nav button:hover::after {
     width: 100%;
-    
+
 }
 
-.section{
+.section {
     width: 70%;
-    max-width: 1200px;
-    height: 400px;
+    max-width: 1400px;
+    min-height: 400px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    padding: 4rem;
+    gap: 3rem;
+    background-color: rgba(255, 255, 255, );
+    /* border: 1px solid black; */
+    border-radius: 9px;
+    box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.3);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.menuItem {
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 8px 1px rgba(218, 184, 30, 0.836);
+    background-color: rgb(255, 215, 0, 0.8);
+}
+
+
+.menuItem .image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s ease;
+
+
+
+}
+
+.menuItem:hover .image {
+    transform: rotate(60deg) scale(1.1);
+    /* box-shadow: 2px 2px 8px 1px rgba(218, 205, 30, 0.671); */
+
+}
+
+.menuItem .paneer {
+    background-image: url('paneer.jpg');
+}
+
+.menuItem .samosa {
+    background-image: url('samosa.jpg');
+}
+
+.menuItem .daal {
+    background-image: url('dal-makhani.jpg');
+}
+
+.menuItem .biryani {
+    background-image: url('briyani.jpg');
+}
+
+
+.menuItem .description {
+    flex: 1;
+    /* background-color: gold; */
+}
+
+.about {
+    width: 60%;
+    min-height: 400px;
+    background-color: rgba(0, 0, 0, 0.692);
+    padding: 1rem;
     margin: 0 auto;
     margin-top: 5rem;
-    padding: 2rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    background-color: red;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    border-radius: 9px;
+    box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+.about>p,
+.about>h2 {
+    color: white;
+}
+
+.about>h2 {
+    text-align: center;
+}
+
+.contactForm {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 1.5rem;
+    margin-top: 5rem;
+    background-color:  #e44069;
+    background-color: #1b1c22 ;
+
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+.contactForm h2{
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+.contactForm label {
+    font-weight: bold;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.877);
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
 }
